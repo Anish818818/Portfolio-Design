@@ -1733,9 +1733,90 @@ body.hovering #cursor-custom {
     background: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
 }
 
-/* Responsive Gallery Title */
+/* ===================================
+   Mobile Portrait Refining (NEW)
+   =================================== */
+@media (max-width: 480px) {
+
+    /* Hero Scaling */
+    .year-text {
+        font-size: 1.1rem;
+        letter-spacing: 2px;
+    }
+
+    .top-badge {
+        top: 10vh;
+        left: 10vw;
+        padding: 8px 15px;
+    }
+
+    .bottom-badge {
+        bottom: 15vh;
+        right: 10vw;
+        padding: 8px 15px;
+        font-size: 0.75rem;
+    }
+
+    .main-title {
+        font-size: clamp(3rem, 15vw, 4.5rem);
+    }
+
+    .glass-capsule.capsule-left {
+        width: 60vw;
+        height: 18vw;
+        left: -15%;
+        opacity: 0.6;
+    }
+
+    .glass-capsule.capsule-right {
+        width: 50vw;
+        height: 15vw;
+        right: -10%;
+        opacity: 0.6;
+    }
+
+    /* Contact Section Scaling */
+    .contact-main-title {
+        font-size: 1.5rem;
+        /* Significantly smaller for portrait */
+        line-height: 1.2;
+    }
+
+    .contact-subtext {
+        font-size: 0.8rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-box.redesigned {
+        padding: 60px 20px;
+        border-radius: 30px;
+    }
+
+    .contact-star-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-star {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* General Layout */
+    .section-glass {
+        padding: 80px 0;
+    }
+
+    .bento-grid {
+        gap: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
-    .gallery-title {
-        font-size: 3rem;
+    .minimal-nav {
+        width: 90%;
+        gap: 20px;
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 }
