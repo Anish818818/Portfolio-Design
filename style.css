@@ -1173,15 +1173,22 @@ body.hovering #cursor-custom {
 .work-image-wrapper {
     width: 100%;
     height: auto;
-    /* Allow natural height to prevent any perceived cropping */
+    min-height: 400px;
+    /* Baseline for balance on larger screens */
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    /* Very subtle depth */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .work-image-file {
-    width: 100%;
-    height: auto;
-    /* Maintain natural aspect ratio */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* Ensure no cropping */
     display: block;
     transition: transform 0.5s ease;
 }
@@ -1591,7 +1598,17 @@ body.hovering #cursor-custom {
     }
 
     .work-image-wrapper {
+        height: 70vh;
+        /* Consistent height for portrait mobile balance */
+        min-height: 450px;
+        background: rgba(0, 0, 0, 0.02);
+    }
+
+    .work-image-file {
+        width: auto;
         height: auto;
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
