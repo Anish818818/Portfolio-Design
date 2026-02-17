@@ -1172,22 +1172,16 @@ body.hovering #cursor-custom {
 
 .work-image-wrapper {
     width: 100%;
-    height: 600px;
-    /* Enforce uniform height for a clean grid */
+    height: auto;
+    /* Allow natural height to prevent any perceived cropping */
     position: relative;
     overflow: hidden;
-    background-color: #f0f0f0;
-    /* Subtle background for letterboxing */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .work-image-file {
-    max-width: 100%;
-    max-height: 100%;
-    /* Maintain aspect ratio without cropping */
-    object-fit: contain;
+    width: 100%;
+    height: auto;
+    /* Maintain natural aspect ratio */
     display: block;
     transition: transform 0.5s ease;
 }
@@ -1597,7 +1591,7 @@ body.hovering #cursor-custom {
     }
 
     .work-image-wrapper {
-        height: 500px;
+        height: auto;
     }
 }
 
