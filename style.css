@@ -1130,8 +1130,18 @@ body.hovering #cursor-custom {
    =================================== */
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
+    margin-top: 3rem;
+    align-items: start;
+    /* align items to start to prevent stretching height */
+}
+
+/* Gallery grid keeps masonry layout */
+.works-grid.gallery-grid {
+    display: block;
+    column-count: 3;
+    column-gap: 3rem;
     margin-top: 3rem;
 }
 
@@ -1144,6 +1154,17 @@ body.hovering #cursor-custom {
     position: relative;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 100%;
+}
+
+.works-grid.gallery-grid .work-card {
+    /* These properties are typically for masonry/column layout,
+       but are kept here as they might have other implications
+       or be intended for specific child elements within the grid context. */
+    break-inside: avoid;
+    margin-bottom: 3rem;
+    display: inline-block;
+    /* Can be removed if not needed for specific styling within grid items */
 }
 
 .work-card::before {
@@ -1173,8 +1194,6 @@ body.hovering #cursor-custom {
 .work-image-wrapper {
     width: 100%;
     height: auto;
-    min-height: 400px;
-    /* Baseline for balance on larger screens */
     position: relative;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.02);
@@ -1185,10 +1204,8 @@ body.hovering #cursor-custom {
 }
 
 .work-image-file {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    /* Ensure no cropping */
+    width: 100%;
+    height: auto;
     display: block;
     transition: transform 0.5s ease;
 }
@@ -1594,21 +1611,22 @@ body.hovering #cursor-custom {
     }
 
     .works-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .works-grid.gallery-grid {
+        column-count: 2;
+        column-gap: 2rem;
     }
 
     .work-image-wrapper {
-        height: 70vh;
-        /* Consistent height for portrait mobile balance */
-        min-height: 450px;
         background: rgba(0, 0, 0, 0.02);
     }
 
     .work-image-file {
-        width: auto;
+        width: 100%;
         height: auto;
-        max-width: 100%;
-        max-height: 100%;
     }
 }
 
@@ -1809,6 +1827,14 @@ body.hovering #cursor-custom {
 
     .bento-grid {
         gap: 1rem;
+    }
+
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .works-grid.gallery-grid {
+        column-count: 1;
     }
 }
 
